@@ -152,13 +152,6 @@ int main(){
             *modalesAux = rand() % 100;
         }
         
-        char * nomina;
-        int modales;
-        int periodo;
-        char * techo;
-        char * fecha;
-        
-        
     }
     
     //Torres
@@ -209,11 +202,27 @@ int main(){
     }
     
     //Reportes
+    //Reporte de RH
+    printf("Reporte RH\n");
+    
+    for(empAux=empleados; empAux < empFin; ++empAux){
+        
+        printf("Empleado \n");
+        printf("Numero de Nomina: %d", empAux->nomina);
+        printf("Nombre: &s", empAux->nombre);
+        printf("Apellidos: &s", empAux->apellidos);
+        printf("Fecha de Nacimiento: %s", empAux->fechaNac);
+        printf("Fecha de Ingreso: %s", empAux->ingreso);
+        printf("Puesto: %s", empAux->puesto);
+        printf("Salario: $%d",empAux->salario);
+    }
+    
     //Modelos por fecha y empleado
     
-   /* char * numNomina = (char *)malloc(sizeof(char)*100);
+    char * numNomina = (char *)malloc(sizeof(char)*100);
     char * fechaBus = (char *)malloc(sizeof(char) * 100);
     
+    printf("Reporte de un empleado \n");
     printf("Numero de Nomina: ");
     scanf("%s", numNomina);
     
@@ -224,12 +233,53 @@ int main(){
     for(casasAux=casas; casasAux < casasFin; ++casasAux){
         
         if(casasAux->fecha == fechaBus && casasAux->nomina == numNomina){
-            printf("");
+            printf("Modelos de Naves \n");
+            printf("Numero de nomina del creador: %s\n", casasAux->nomina);
+            printf("Tipo de techo: %s \n", casasAux->techo);
+            printf("Resultado de modales: %d \n", casasAux->modales);
+            printf("Periodo: %d \n", casasAux->periodo);
+            printf("----------------");
             
         }
-        
-    }*/
+    }
     
+    for(torresfAux=torres; torresfAux < torresFin; ++torresfAux){
+        
+        if(torresfAux->fecha == fechaBus && torresfAux->nomina == numNomina){
+            printf("Modelos de Torres \n");
+            printf("Numero de nomina del creador: %s\n", torresfAux->nomina);
+            printf("Periodo: %d \n", torresfAux->periodo);
+            for(modalesAux2=torresfAux->modales; modalesAux2<modalesFin2;++modalesAux2){
+                printf("modales: %d", *modalesAux2);
+            }
+            for(diamAux=torresfAux->diametros; diamAux < diamFin; ++diamAux){
+                printf("Diametros: %d",*diamAux);
+            }
+            printf("----------------");
+            
+        }
+    }
+
+    for(edifAux=torres; edifAux < edifFin; ++edifAux){
+        
+        if(edifAux->fecha == fechaBus && edifAux->nomina == numNomina){
+            printf("Modelos de Edificios \n");
+            printf("Numero de nomina del creador: %s\n", edifAux->nomina);
+            printf("Niveles: %d\n", edifAux->niveles);
+            if(edifAux->simetrico==1){
+                printf("Simetrico: Si");
+            }
+            else{
+                printf("Simetrico: No");                
+            }
+            printf("Periodo: %d \n", edifAux->periodo);
+            for(modalesAux2=edifAux->modales; modalesAux2<modalesFin2;++modalesAux2){
+                printf("modales: %d", *modalesAux2);
+            }
+            printf("----------------");
+            
+        }
+    }
     
     
     //Liberar Memoria
