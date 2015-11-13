@@ -1,0 +1,21 @@
+Explicacion de los metodos:
+
+omp_init_lock: Inicializa un bloque simple
+
+omp_init_nest_lock: Inicializa un bloqueo anidado que se usa cuando para que un mismo hilo 
+
+omp_destroy_lock: Destruye un bloqueo simple.
+
+omp_destroy_nest_lock: Destruye un bloque anidado.
+
+omp_set_lock: bloquea el lock creado.
+
+omp_set_nest_lock: bloquea el lock anidado.
+
+omp_unset_lock: desbloquea un lock
+
+omp_unset_nest_lock: desbloquea un lock anidado
+
+omp_test_lock: se prueba si un bloquea esta ocupado o no, si esta libre se ocupa
+
+omp_test_nest_lock: lo mismo que un omp_test_lock pero de manera anidada.
